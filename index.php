@@ -1,9 +1,9 @@
-<?php
+<!-- <?php
 include_once __DIR__."/connection.php";
-?>
+?> -->
 
 
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -11,26 +11,11 @@ include_once __DIR__."/connection.php";
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/style.css">
+    
 
 </head>
 <body>
-<script>
-     
-             var firstname= document.getElementById('first')
-             var password=document.getElementById('password')
 
-
-    form.addeventlistener(validate(),'submit')
-
-    function validate(e){
-
-             if (firstname==null||firstname===""){
-                alert ("name cant be blank")
-                return false;
-             }
-            }     
-               
-</script>
              
     <div class="imgc">
         <img src="image/9wJN.gif" alt="" class="img" width="100%">
@@ -39,25 +24,25 @@ include_once __DIR__."/connection.php";
         <div class="child">
 
 <div id="error"></div>
-    <form action="index.php"  method="post" id="firm">
+    <form action="redirect.php"  method="post" id="firm">
     <label for="firstname" ><b>firstname</b></label>
-        <input type="text"  id="first" placeholder="firstname" name="firstname" required><br><br>
+        <input type="text"  id="first" placeholder="firstname" name="firstname" ><br><br>
        
         <label for="lastname"><b>lastname</b></label>
-        <input type="text" id="last" placeholder="lastname" name="lastname" required><br><br>
+        <input type="text" id="last" placeholder="lastname" name="lastname" ><br><br>
         
         <label for="email"><b>email</b></label>
-        <input  type="email" id="email" placeholder="Enter email" name="email" required><br><br>
+        <input  type="email" id="email" placeholder="Enter email" name="email" ><br><br>
        
         <label for="pasword" i><b> pasword</b></label>
-        <input  type="password" id="password" placeholder=" Password" name=" pasword" required><br><br>
+        <input  type="password" id="password" placeholder=" Password" name=" pasword"><br><br>
         <p></p>
         <label for="password" > confirm password </label>
-        <input type="password" id="password2" placeholder="password" name="confirmpassword" required>
-       <center><button type="submit" class="button">Login</button></center>
+        <input type="password" id="password2" placeholder="password" name="confirmpassword">
+       <center><button type="submit" class="button">submit</button></center>
      
     </form></div>
-<?php
+ <?php
 if($_SERVER["REQUEST_METHOD"] == 'POST'){
 
         $firstname = $_POST['firstname'];
@@ -66,13 +51,16 @@ if($_SERVER["REQUEST_METHOD"] == 'POST'){
         $password = $_POST['pasword'];
 
 
-        $sql="INSERT INTO michelle(firstname,lastname,email,pasword) VALUES('$firstname','$lastname','$email','$password')";
-       mysqli_query($conn,$sql);
+       
+
+    //     $sql="INSERT INTO michelle(firstname,lastname,email,pasword) VALUES('$firstname','$lastname','$email','$password')";
+    //    mysqli_query($conn,$sql);
 } 
-    ?>
-
-
-            
-            
+?>
+ <script src="index.js"></script>
 </body>
 </html>
+
+            
+            
+
