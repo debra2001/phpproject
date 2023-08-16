@@ -1,3 +1,9 @@
+<!-- <?php
+include_once __DIR__."/connection.php";
+?>  -->
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,17 +15,41 @@
 </head>
 <body>
     <div>
-    <!-- <h1 class="text-center">View Book</h1> -->
+ 
+<div class="container">
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th scope="col">id</th>
+            <th scope="col">first name</th>
+            <th scope="col">last name</th>
+            <th scope="col">email</th>
+            <th scope="col">password</th>            
+        </tr>
+        </thead>
     
-    <?php 
-$first=$_POST['firstname'];
-$last=$_POST['lastname'];
-$email=$_POST['email'];
-$pass=$_POST['pasword'];
-
-echo "your details are"." ".$first. " ".$last ." ".$email." ".$pass;
-
-    ?>
+        <?php 
+        $sql="SELECT * FROM michelle";
+        $ret=mysqli_query($conn,$sql);
+        if(mysqli_num_rows($ret)>0){
+            while($row=mysqli_fetch_assoc($ret)){
+                ?>
+                <tr>
+                    <td><?php echo $row["id"];?></td>
+                   
+                    <td><?php echo $row["firstname"];?></td>
+                    <td><?php echo $row["lastname"];?></td>
+                    <td><?php echo $row["email"];?></td>
+                    <td><?php echo $row["pasword"];?></td>    
+                </tr> 
+                <?php
+            } 
+    }else{
+        echo "no results";
+    }
+   
+      ?>      
+    </table>
 </body>
 </html>
 
@@ -32,9 +62,8 @@ echo "your details are"." ".$first. " ".$last ." ".$email." ".$pass;
 
 
 
-<?php
 
 
 
 
-?>
+

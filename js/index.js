@@ -1,18 +1,23 @@
 
-     var wform=document.getElementById(firm);
-     wform.addEventListener("submit",(e) => {e.preventDefault();
+    function validateform(){
     
-          var firstname = document.getElementById('first');
-          var lastname = document.getElementById('last');
+          var firstname = document.firm.firstname.value;
+          var lastname = document.firm.lastname;
+          var password=document.firm.pasword.value; 
           
-          if (firstname.value==''||password.value==''){
+          if (firstname.value==''||lastname.value==''){
             alert('enter all fields!');
+            return false;
           }  
-          else{
-            alert('form submittedd succesfully');
+          else 
+          if(password.length<6){
+            alert ("pasword must be atleast six characters long.");
+            return false;
           }
+          
+
         }
-          );
+          
    
 
           
