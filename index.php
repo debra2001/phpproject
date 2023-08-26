@@ -1,5 +1,5 @@
  <?php
-include_once __DIR__."/connection.php";
+include_once __DIR__."./connection.php";
 ?> 
 
 
@@ -24,7 +24,7 @@ include_once __DIR__."/connection.php";
         <div class="child">
 
 <div id="error"></div>
-    <form action="redirect.php"  method="post" name="firm" onsubmit="return validateform()">
+    <form action=""  method="post" name="firm" onsubmit="return validateform()">
     <label for="firstname" ><b>firstname</b></label>
         <input type="text"  id="first" placeholder="firstname" name="firstname" ><br><br>
        
@@ -35,7 +35,7 @@ include_once __DIR__."/connection.php";
         <input  type="email" id="email" placeholder="Enter email" name="email" ><br><br>
        
         <label for="pasword" i><b> pasword</b></label>
-        <input  type="password" id="password" placeholder=" Password" name=" pasword"><br><br>
+        <input  type="password" id="password" placeholder=" Password" name="pasword"><br><br>
         <p></p>
         
        <center><button type="submit" class="button">submit</button></center>

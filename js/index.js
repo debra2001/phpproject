@@ -14,8 +14,6 @@
             alert ("pasword must be atleast six characters long.");
             return false;
           }
-          
-
         }
           
    
