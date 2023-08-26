@@ -15,16 +15,32 @@ include_once __DIR__."/connection.php";
 
 </head>
 <body>
+<div class="navmenu">
+  <div class="content">
+     <nav >
+     <ul class="ul">
+        <li><a href="#">Form</a></li>
+        <li><a href="redirect.php">Table</a></li>
+     </ul>
+    </nav>
+  </div>
+   
+</div>
+ 
 
              
-    <div class="imgc">
+   <div class="gif">
+   <span class="imgc">
         <img src="image/9wJN.gif" alt="" class="img" width="100%">
-    </div>
-    <div class="mom"> <div class="container">
-        <div class="child">
+   </span>
+   </div>
 
-<div id="error"></div>
-    <form action="redirect.php"  method="post" name="firm" onsubmit="return validateform()">
+    <div class="mom">
+         <div class="container">
+            <div class="child">
+
+
+    <form action=""  method="post" id="error" name="firm" onsubmit="return validateform()">
     <label for="firstname" ><b>firstname</b></label>
         <input type="text"  id="first" placeholder="firstname" name="firstname" ><br><br>
        
@@ -40,7 +56,10 @@ include_once __DIR__."/connection.php";
         
        <center><button type="submit" class="button">submit</button></center>
      
-    </form></div>
+    </form>
+</div>
+  </div>
+     </div>
  <?php
 if($_SERVER["REQUEST_METHOD"] == 'POST'){
 
@@ -48,13 +67,12 @@ if($_SERVER["REQUEST_METHOD"] == 'POST'){
         $lastname = $_POST['lastname'];
         $email = $_POST['email'];
         $password = $_POST['pasword'];
-
-
-       
-
         $sql="INSERT INTO michelle(firstname,lastname,email,pasword) VALUES('$firstname','$lastname','$email','$password')";
        mysqli_query($conn,$sql);
+
+       header("Location:redirect.php");
 } 
+
 ?>
  <script src="js/index.js"></script>
 </body>
